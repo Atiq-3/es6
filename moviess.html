@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="movieName">
+    <button onclick="searchMovie()"> search </button>
+    <p id="para"></p>
+
+    <script>
+        let data=[
+            {
+            movieName:"cars",
+            movieType:"animation",
+            lunched:2022
+            
+            },
+            {
+            movieName:"how to train your dragon",
+            movieType:"animation",
+            lunched:2021
+            },
+            {
+            movieName:"moana",
+            movieType:"animation",
+            lunched:2024
+            }
+        ]
+
+        function searchMovie(){
+          let searchInput =  document.getElementById('movieName').value
+          console.log(searchInput)
+
+          let filterData = data.filter((val)=>{
+          val.movieName.toLowerCase() == searchInput.toLowerCase()
+          })
+          console.log(filterData,"filterdata")
+          document.getElementById('para').innerHTML = filterData[0].movieName
+        }
+
+
+
+    </script>
+</body>
+
+</html>
